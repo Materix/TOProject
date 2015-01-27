@@ -12,7 +12,6 @@ import com.jme3.scene.Spatial;
 
 public class SimpleRollControl extends AbstractRollControl {
 
-	private Quaternion targetRotate;
 	private Spatial[] dices;
 	
 	public SimpleRollControl(int diceName, Spatial[] dices) {

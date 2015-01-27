@@ -13,7 +13,6 @@ import com.jme3.scene.Spatial;
 
 public class AdvancedRollControl extends AbstractRollControl {
 
-	private Quaternion targetRotate;
 	private int steps;
 	private int diceName;
 	

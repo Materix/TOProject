@@ -1065,8 +1065,8 @@ _+main(String[] args): void_</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>798</x>
-      <y>1113</y>
+      <x>567</x>
+      <y>1246</y>
       <w>140</w>
       <h>70</h>
     </coordinates>
@@ -1082,34 +1082,29 @@ _+main(String[] args): void_</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>504</x>
-      <y>1113</y>
+      <x>406</x>
+      <y>1246</y>
       <w>140</w>
       <h>70</h>
     </coordinates>
     <panel_attributes>UserPutControl
 --
 +controlUpdate(float tpf): void
---
--number: int
--diceName: int</panel_attributes>
+--</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>651</x>
-      <y>1113</y>
+      <x>770</x>
+      <y>1309</y>
       <w>140</w>
       <h>70</h>
     </coordinates>
-    <panel_attributes>RollControl
+    <panel_attributes>SimpleRollControl
 --
 +controlUpdate(float tpf): void
---
--number: int
--startRoll: boolean
--targetRotate: Quaternion </panel_attributes>
+--</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -1203,34 +1198,83 @@ _+main(String[] args): void_</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>861</x>
-      <y>1071</y>
-      <w>77</w>
+      <x>630</x>
+      <y>1204</y>
+      <w>161</w>
       <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>90.0;10.0;10.0;60.0</additional_attributes>
+    <additional_attributes>210.0;10.0;10.0;60.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>714</x>
+      <x>819</x>
       <y>1071</y>
-      <w>196</w>
+      <w>91</w>
       <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>260.0;10.0;10.0;60.0</additional_attributes>
+    <additional_attributes>110.0;10.0;10.0;60.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>560</x>
-      <y>1071</y>
-      <w>315</w>
+      <x>462</x>
+      <y>1204</y>
+      <w>133</w>
       <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>430.0;10.0;10.0;60.0</additional_attributes>
+    <additional_attributes>170.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>707</x>
+      <y>1113</y>
+      <w>231</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>AbstractRollControl
+--
++setNumberToRoll(int number): void
++SimpleRollControl(int diceName, Spatial[] dices)
+-isCollision(): boolean
+--
+#number: int
+#startRoll: boolean
+#Quaternion: targetQuaternion</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>539</x>
+      <y>1113</y>
+      <w>161</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>AbstractPutControl
+--
++controlUpdate(float tpf): void
++AbstractPutControl(int diceName)
++setNumberToPut(int number): void
+--
+#number  int
+#diceName: int
+#putLocation: Vector3f </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>784</x>
+      <y>1253</y>
+      <w>70</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;80.0</additional_attributes>
   </element>
 </diagram>
