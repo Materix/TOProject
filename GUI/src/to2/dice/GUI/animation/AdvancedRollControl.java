@@ -63,7 +63,7 @@ public class AdvancedRollControl extends AbstractRollControl {
 				break;
 			}
 			diceControl.setLinearVelocity(new Vector3f(6, 0, -15));
-			diceControl.setPhysicsLocation(new Vector3f(-3, 5 / 2 - diceName, 5));
+			diceControl.setPhysicsLocation(new Vector3f(-2.45f, 5 / 2 - diceName, 5));
 			diceControl.setPhysicsRotation(new Quaternion().fromAngleAxis(-FastMath.HALF_PI, Utils.randomLocation()));
 			Geometry d6 = (Geometry) spatial;
 			d6.getMaterial().setColor("Diffuse", ColorRGBA.White);
@@ -82,7 +82,7 @@ public class AdvancedRollControl extends AbstractRollControl {
 				}
 				if (location.z > 0) {
 					steps = 10;
-					diceControl.applyImpulse(new Vector3f(5, 5, 0), diceControl.getPhysicsLocation());
+					diceControl.applyImpulse(new Vector3f(1, 1, 0), diceControl.getPhysicsLocation());
 				}
 			} else if (steps > 0) {
 				steps--;
@@ -90,6 +90,8 @@ public class AdvancedRollControl extends AbstractRollControl {
 			if (location.z > 2) {
 				Vector3f currentLinearVelocity = diceControl.getLinearVelocity();
 				if (currentLinearVelocity.z > 0) {
+					System.out.print("z ");
+					System.out.println(location.z);
 					currentLinearVelocity.z = -currentLinearVelocity.z;
 					diceControl.setLinearVelocity(currentLinearVelocity);
 				}
@@ -97,16 +99,24 @@ public class AdvancedRollControl extends AbstractRollControl {
 			if (location.z < -1) {
 				diceControl.setPhysicsLocation(new Vector3f(-3, 5 / 2 - diceName, 0.5f));
 			}
-			if (location.x > 4.0) {
-				diceControl.applyImpulse(new Vector3f(-5, 0, 0), diceControl.getPhysicsLocation());
-			} else if (location.x < -2.0) {
-				diceControl.applyImpulse(new Vector3f(5, 0, 0), diceControl.getPhysicsLocation());
-			}
-			if (location.y > 4.0) {
-				diceControl.applyImpulse(new Vector3f(0, -5, 0), diceControl.getPhysicsLocation());
-			} else if (location.y < -4.0) {
-				diceControl.applyImpulse(new Vector3f(0, 5, 0), diceControl.getPhysicsLocation());
-			}
+//			if (location.x > 4.5) {
+//				System.out.print("x ");
+//				System.out.println(location.x);
+//				diceControl.applyImpulse(new Vector3f(-1, 0, 0), diceControl.getPhysicsLocation());
+//			} else if (location.x < -2.5) {
+//				System.out.print("-x ");
+//				System.out.println(location.x);
+//				diceControl.applyImpulse(new Vector3f(1, 0, 0), diceControl.getPhysicsLocation());
+//			}
+//			if (location.y > 4.5) {
+//				System.out.print("y ");
+//				System.out.println(location.y);
+//				diceControl.applyImpulse(new Vector3f(0, -1, 0), diceControl.getPhysicsLocation());
+//			} else if (location.y < -4.5) {
+//				System.out.print("-y ");
+//				System.out.println(location.y);
+//				diceControl.applyImpulse(new Vector3f(0, 1, 0), diceControl.getPhysicsLocation());
+//			}
 		}
 		
 	}
