@@ -81,6 +81,7 @@ public class AdvancedRollControl extends AbstractRollControl {
 					steps = 25;
 				}
 				if (location.z > 0) {
+					steps = 10;
 					diceControl.applyImpulse(new Vector3f(5, 5, 0), diceControl.getPhysicsLocation());
 				}
 			} else if (steps > 0) {
