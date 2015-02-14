@@ -6,7 +6,7 @@ public class kot {
 	
 	
 	public int getA() {
-		return 30;
+		return 20;
 	}
 	public void setA(int a) {
 		this.a = a;
